@@ -3,9 +3,31 @@ title: algoritmos-practica
 language: English
 programming_language: Java
 content:
-  - sort
-  - order
+  - resource
+  - chapter1
+  - chapter2
+  - chapter3
 additional_files:
   - name: build.gradle
   - name: settings.gradle
+  - name: LICENSE
+  - name: README.md
+  - name: resource/example-sheets/ex4.pdf
+    is_binary: true
+  - name: resource/example-sheets/ex5.pdf
+    is_binary: true
+  - name: resource/example-sheets/ex6.pdf
+    is_binary: true
+  - name: resource/example-sheets/1-12-stajano-algs-exercises.pdf
+    is_binary: true
+  - name: resource/lectures/notes-1-12.pdf
+    is_binary: true
+  - name: resource/lectures/notes-13-23.pdf
+    is_binary: true
+  - name: chapter1/chapter1.md
+  - name: chapter2/chapter2.md
+  - name: chapter3/chapter3.md
+  - name: resource/syllabus.md
+  - name: resource/img/project-structure.png
+    is_binary: true
 yaml_version: 3
