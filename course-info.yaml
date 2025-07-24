@@ -30,4 +30,5 @@ additional_files:
   - name: resource/syllabus.md
   - name: resource/img/project-structure.png
     is_binary: true
+  - name: .gitignore
 yaml_version: 3
