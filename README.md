@@ -54,7 +54,7 @@ See [SYLLABUS.md](SYLLABUS.md) for detailed schedule.
 2. In the project comboBox type, select "Course"
 3. And that's it!
 
-![Image](/resource/img/project-structure.png)
+<img src="resource/img/project-structure.png" alt="Project Structure" style="width: 50%;">
 
 ---
 
