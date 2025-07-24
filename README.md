@@ -50,7 +50,7 @@ See [SYLLABUS.md](SYLLABUS.md) for detailed schedule.
 
 ## InteliJ Setup
 
-1.Open the project in IntelliJ
+1. Open the project in IntelliJ
 2. In the project comboBox type, select "Course"
 3. And that's it!
 
