@@ -31,4 +31,6 @@ additional_files:
   - name: resource/img/project-structure.png
     is_binary: true
   - name: .gitignore
+  - name: .git/objects/25/6ed5ac46311c1cf9608470cb3cafeb93c18d6e
+    is_binary: true
 yaml_version: 3
