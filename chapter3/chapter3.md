@@ -2,138 +2,234 @@
 
 ## Dynamic Programming
 
-### Rod Cutting Problem
+**Rod Cutting**
 
-**Problem**: Given a rod of length `n` and an array `prices[]` where `prices[i]` is the value of a rod of length `i + 1`, find the optimal way to cut the rod to maximize profit.
+**Problem**: Given a rod of length `n` and an array `prices[]` where `prices[i]` represents the value of a rod of length `i + 1`, the goal is to find the best way to cut it to maximize profit.
 
-**Recurrence formula**:
-$$ r(n) = \max\_{1 \leq i \leq n} (prices[i] + r(n-i)) $$
+**Recurrence relation**:
 
-**Key concept**: For each length `i`, evaluate all possible cuts and choose the one that maximizes the sum between the cut value and the optimal solution for the remainder.  
-**Complexity**: $O(n^2)$
+<div style="text-align: center;">
+  <img src="img/img1.png" alt="sub array" style="width: 50%;">
+</div>
 
----
 
-### Matrix Chain Multiplication
-
-**Problem**: Given a sequence of matrices, determine the optimal multiplication order to minimize the total number of scalar multiplications.  
-**Input**: An array `p[]` where the i-th matrix has dimensions `p[i-1] × p[i]`.
-
-**Recurrence formula**:
-$$ m[i,j] = \min\_{i \leq k < j} (m[i,k] + m[k+1,j] + p[i-1] \cdot p[k] \cdot p[j]) $$
-
-**Strategy**: Test all possible split points `k` and choose the minimum cost combination.  
-**Complexity**: $O(n^3)$
+**Key concept**: for each length `i`, all possible cuts are evaluated, and the one that maximizes the sum between the value of the cut and the optimal solution of the remaining piece is selected.  
+**Complexity**: O(n²)
 
 ---
 
-### Longest Common Subsequence (LCS)
+**Matrix Chain Multiplication**
 
-**Problem**: Given two strings, find the longest subsequence common to both (not necessarily contiguous).
+**Problem**: Given a sequence of matrices, determine the optimal multiplication order that minimizes the total number of scalar multiplications.  
+**Input**: An array `p[]` such that the i-th matrix has dimensions `p[i-1] × p[i]`.
 
-**Recurrence formula**:
+**Recurrence relation**:
 
-$$
-\text{LCS}(i,j) =
-\begin{cases}
-0 & \text{if } i=0 \text{ or } j=0 \\
-\text{LCS}(i-1,j-1) + 1 & \text{if } x[i] = y[j] \\
-\max(\text{LCS}(i-1,j), \text{LCS}(i,j-1)) & \text{otherwise}
-\end{cases}
-$$
+<div style="text-align: center;">
+  <img src="img/img3.png" alt="sub array" style="width: 50%;">
+</div>
 
-**Complexity**: $O(m \times n)$
+**Strategy**: try all possible points `k` to split the product and take the minimum combination.  
+**Complexity**: O(n³)
+
+---
+
+**Longest Common Subsequence (LCS)**
+
+**Problem**: Given two strings, find the longest common subsequence (not necessarily contiguous).  
+**Recurrence relation**:
+
+
+<div style="text-align: center;">
+  <img src="img/img2.png" alt="sub array" style="width: 50%;">
+</div>
+
+
+**Strategy**: build a table that captures the length of the LCS for the first `i` and `j` characters of both strings.  
+**Complexity**: O(m × n)
 
 ---
 
 ## Greedy Algorithms
 
-### Core Principles
-
-1. **Incremental construction**: Solution built step-by-step
-2. **Locally optimal choice**: At each step, select the seemingly best option
-3. **Optimality verification**: Doesn't always guarantee global optimum (requires proof)
+**General Principles**
+1. **Incremental construction**: the solution is built step by step.
+2. **Local optimal decision**: at each step, choose the option that seems best without revisiting previous decisions.
+3. **Optimality verification**: greedy algorithms do not always guarantee an optimal solution. It must be proven correct for the problem.
 
 ---
 
-### Huffman Coding
+**Huffman Coding**
 
-**Problem**: Construct an optimal binary code given character frequencies.
+**Problem**: Given a set of characters and their frequencies, construct an optimal unambiguous binary code.
 
 **Strategy**:
+1. Create a node for each character.
+2. Use a priority queue to build a binary tree by combining the two nodes with the lowest frequency.
+3. Assign `0` to the left and `1` to the right when traversing the tree.
 
-1. Create nodes for each character
-2. Use priority queue to build binary tree by combining lowest-frequency nodes
-3. Assign `0`/`1` to left/right branches
-
-**Complexity**: $O(n \log n)$
-
----
-
-### The Knapsack Problem
-
-**Fractional Version (Greedy)**  
-**Strategy**: Select items with highest value/weight ratio first  
-**Complexity**: $O(n \log n)$ (due to sorting)
-
-**0/1 Version (DP)**  
-**Recurrence formula**:
-$$ dp[i][w] = \max(dp[i-1][w], dp[i-1][w-w_i] + v_i) $$  
-**Complexity**: $O(n \times W)$
+**Result**: shorter codes for more frequent characters, minimizing the total number of bits required.  
+**Complexity**: O(n log n)
 
 ---
 
-## Other Design Strategies
+**The Knapsack Problem**
 
-### Divide and Conquer
+**Problem**: Given a set of items with weights and values, and a maximum capacity, select the items that maximize the total value without exceeding the capacity.
 
-**Steps**:
+**Version 1 – Fractional (Greedy)**  
+Fractions of items can be taken.  
+**Strategy**: choose items with the highest value/weight ratio first.  
+**Complexity**: O(n log n) (due to sorting)
 
-1. Divide into subproblems
-2. Solve recursively
-3. Combine solutions
+**Version 2 – 0/1 (Dynamic Programming)**  
+Items cannot be split.  
+**Recurrence relation**:
+
+<div style="text-align: center;">
+  <img src="img/img4.png" alt="sub array" style="width: 50%;">
+</div>
+
+Where `w_i` is the weight of item `i`, and `v_i` is its value.  
+**Complexity**: O(n × W), where `W` is the total capacity.
+
+---
+
+## DP vs. Greedy Comparison
+
+| Criterion             | Dynamic Programming            | Greedy Algorithm                         |
+|-----------------------|--------------------------------|------------------------------------------|
+| Repeated subproblems  | Yes                            | Not necessarily                          |d) | Only if proven |
+| Typical example       | LCS, Rod Cutting, 0/1 Knapsack | Huffman, Fractional Knapsack, Activities |
+
+---
+
+## Other Algorithm Design Strategies
+
+### 1. Divide and Conquer
+
+**Main idea**:  
+Divide the problem into smaller subproblems, solve them recursively, and then combine their solutions.
+
+**Typical steps**:
+1. **Divide** the problem into two or more subproblems of the same type.
+2. **Conquer** each subproblem recursively.
+3. **Combine** the solutions to obtain the solution to the original problem.
+
+**Classic examples**:
+- MergeSort
+- QuickSort
+- Binary Search
+- Fast Fourier Transform
+
+**Advantage**: reduces large problems to smaller, more manageable units.  
+**Complexity**: often leads to recurrences like:
+
+<div style="text-align: center;">
+  <img src="img/img5.png" alt="sub array" style="width: 50%;">
+</div>
+
+Where the **Master Theorem** can be used to solve them.
+
+---
+
+### 2. Backtracking
+
+**Main idea**:  
+Explore all possible solutions recursively, backtracking when a choice does not lead to a valid solution.
+
+**Used when**:
+- There are many possible combinations.
+- We want to find all solutions or one that satisfies a condition.
+- The search is complex and requires rollback.
 
 **Examples**:
+- N-Queens
+- Sudoku
+- Subsets that sum to a given value
 
-- MergeSort ($O(n \log n)$)
-- Binary Search ($O(\log n)$)
+**Technique**:
+1. Move forward recursively in the solution space.
+2. If a decision leads to an invalid solution, backtrack and try another option.
 
-**Master Theorem**:
-$$ T(n) = aT\left(\frac{n}{b}\right) + f(n) $$
-
----
-
-### Backtracking
-
-**Use Case**: Exhaustive search with pruning  
-**Examples**: N-queens, Sudoku  
-**Complexity**: Exponential (improved with pruning)
+**Complexity**: Exponential in the worst case, but efficient with good pruning.
 
 ---
 
-### Branch and Bound
+### 3. Branch and Bound
 
-**Difference from Backtracking**: Uses bounds to prune non-optimal branches  
-**Applications**: TSP, Knapsack
+**Main idea**:  
+Like backtracking, but uses a **bound function** to prune branches that cannot improve the current solution.
+
+**Used in**:
+- Optimization problems
+- TSP (Traveling Salesman Problem)
+- Knapsack
+
+**Difference from backtracking**:
+- Keeps track of the **best solution found so far**
+- Computes a **lower or upper bound** to discard entire branches that can’t outperform the best
 
 ---
 
-### Randomized Algorithms
+### 4. Randomized Algorithms
+
+**Main idea**:  
+Use random numbers to decide what to do in some steps of the algorithm.
 
 **Types**:
+- **Monte Carlo**: always fast, may return an incorrect answer with low probability.
+- **Las Vegas**: always correct, but runtime may vary.
 
-- **Monte Carlo**: Fast, possible error
-- **Las Vegas**: Always correct, variable runtime
-
-**Example**: QuickSort with random pivot ($O(n \log n)$ expected)
+**Examples**:
+- QuickSort (with random pivot)
+- Primality algorithms (Miller-Rabin)
+- Skip Lists
 
 ---
 
-### Strategy Comparison
+### 5. Dynamic Programming with Memoization (Top-Down)
 
-| Strategy           | Typical Use Case          | Complexity           |
-| ------------------ | ------------------------- | -------------------- |
-| Divide and Conquer | Recursive problems        | $O(n \log n)$        |
-| Backtracking       | Exhaustive search         | Exponential          |
-| Branch and Bound   | Optimization with pruning | Improved exponential |
-| Randomized         | Probabilistic solutions   | Case-dependent       |
+In addition to the tabular (bottom-up) version, there’s a top-down version:
+- The algorithm is written recursively.
+- Each subproblem’s result is stored in a table (memoization).
+- Avoids recomputing subproblems.
+
+**Example**:
+
+```java
+Map<String, Integer> memo = new HashMap<>();
+
+int fib(int n) {
+    if (n <= 1) return n;
+    String key = Integer.toString(n);
+    if (memo.containsKey(key)) return memo.get(key);
+    int result = fib(n - 1) + fib(n - 2);
+    memo.put(key, result);
+    return result;
+}
+````
+
+---
+
+### 6. Greedy + DP Combined
+
+Some problems allow for hybrid strategies:
+
+* First, apply a **greedy heuristic**.
+* Then **verify** or **complete** the solution with dynamic programming.
+
+**Example**: Approximation algorithms for graphs or NP-complete problems where the exact solution is too expensive.
+
+---
+
+## <span style="color:#94910ff;"><b>Strategy Comparison</b></span>
+
+| Strategy           | Typical Use                        | Example                 | Typical Complexity        |
+|--------------------|------------------------------------|-------------------------|---------------------------|
+| Divide and Conquer | Recursive structured problems      | MergeSort, QuickSort    | O(n log n) or more        |
+| Backtracking       | Exhaustive search with constraints | Sudoku, N-Queens        | Exponential               |
+| Branch and Bound   | Optimization with pruning          | TSP, Knapsack           | Exponential (improved)    |
+| Randomized         | Fast solutions, probabilistic      | QuickSort, Miller-Rabin | O(n log n), probabilistic |
+| Memoization        | Repeated subproblems               | Fibonacci, LCS          | O(n·m)                    |
+

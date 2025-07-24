@@ -35,4 +35,45 @@ additional_files:
     is_binary: true
   - name: .git/objects/ba/38c4ef485b4d309463bd85aa94398ce2fd9c03
     is_binary: true
+  - name: .git/objects/62/8eea18eb961e95be72ca26aebe70385ffdd289
+    is_binary: true
+  - name: .git/objects/43/c5ff2b05ea5ab8137d1dc871f6c4785e063a50
+    is_binary: true
+  - name: chapter2/img/img1.png
+    is_binary: true
+  - name: .git/objects/18/55dda01ef828ea6b47839271e8250bd65cc29f
+    is_binary: true
+  - name: chapter2/img/img2.png
+    is_binary: true
+  - name: chapter3/img/img1.png
+    is_binary: true
+  - name: .git/objects/25/dc4da3b5f8734f4fa3c5c8be3d01cf2b36cc1e
+    is_binary: true
+  - name: chapter3/img/img3.png
+    is_binary: true
+  - name: chapter3/img/img2.png
+    is_binary: true
+  - name: chapter3/img/img4.png
+    is_binary: true
+  - name: chapter3/img/img5.png
+    is_binary: true
+  - name: todo.md
+  - name: .git/objects/73/6e86c653fffbc8e23b6ed449a95f8d484c9673
+    is_binary: true
+  - name: chapter2/img/Heapsort-example.gif
+    is_binary: true
+  - name: chapter2/img/img3.png
+    is_binary: true
+  - name: chapter2/img/img4.png
+    is_binary: true
+  - name: chapter2/img/img5.png
+    is_binary: true
+  - name: chapter2/img/img6.png
+    is_binary: true
+  - name: chapter2/img/img7.png
+    is_binary: true
+  - name: chapter2/img/img8.png
+    is_binary: true
+  - name: chapter2/img/img9.png
+    is_binary: true
 yaml_version: 3
