@@ -22,7 +22,7 @@ Imagine you are playing cards and you have to sort them in your hand.
 The same thing **insertsort** does with an array of numbers.
 
 <div style="text-align: center;">
-  <img src="img/img8.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter2/img8.png" alt="sub array" style="width: 50%;">
 </div>
 
 **How does it work?**
@@ -293,7 +293,7 @@ Analyzing InsertSort
 🔴 Worst case of InsertSort:The worst case occurs if the array is in reverse order (totally messed up). Every time you insert a new number, you have to compare and move it almost with all the previous ones. Then InsertSort does approximately:
 
 <div style="text-align: center;">
-  <img src="img/img7.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter2/img7.png" alt="sub array" style="width: 50%;">
 </div>
 
 
@@ -317,7 +317,7 @@ Step by step:1. Find the minimum in the whole array.
 SelectionSort cost:Always does the same number of comparisons, no matter if the array is already sorted.
 
 <div style="text-align: center;">
-  <img src="img/img7.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter2/img7.png" alt="sub array" style="width: 50%;">
 </div>
 
 
@@ -378,11 +378,11 @@ Supongamos que tenemos:
 - Y así sucesivamente, hasta comparar solo 1 vez en la últim
 
 <div style="text-align: center;">
-  <img src="img/img6.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter2/img6.png" alt="sub array" style="width: 50%;">
 </div>
 
 <div style="text-align: center;">
-  <img src="img/img5.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter2/img5.png" alt="sub array" style="width: 50%;">
 </div>
 
 ## Binary InsertSortIt is a variant of the InsertSort algorithm, but optimizes the search for the place to insert the element using binary search instead of a linear search.
@@ -705,18 +705,18 @@ Convert the array to a maximum heap (tree-like structure), then extract the maxi
 A heap is a complete binary tree, where each node satisfies the heap order property (e.g., parent ≥ children). In a maximal heap, the largest value is at the root.
 
 <div style="text-align: center;">
-  <img src="img/img4.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter2/img4.png" alt="sub array" style="width: 50%;">
 </div>
 
 <div style="text-align: center;">
-  <img src="img/img3.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter2/img3.png" alt="sub array" style="width: 50%;">
 </div>
 
 
 **Reference Image**
 
 <div style="text-align: center;">
-  <img src="img/Heapsort-example.gif" alt="sub array" style="width: 50%;">
+  <img src="img-chapter2/Heapsort-example.gif" alt="sub array" style="width: 50%;">
 </div>
 
 

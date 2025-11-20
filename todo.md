@@ -1,2 +1,0 @@
-- [ ] cambiar imagenes por las formulas en latex
-- [ ] pasar ejericios a src/java

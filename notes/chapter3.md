@@ -9,7 +9,7 @@
 **Recurrence relation**:
 
 <div style="text-align: center;">
-  <img src="img/img1.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter3/img1.png" alt="sub array" style="width: 50%;">
 </div>
 
 
@@ -26,7 +26,7 @@
 **Recurrence relation**:
 
 <div style="text-align: center;">
-  <img src="img/img3.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter3/img3.png" alt="sub array" style="width: 50%;">
 </div>
 
 **Strategy**: try all possible points `k` to split the product and take the minimum combination.  
@@ -41,7 +41,7 @@
 
 
 <div style="text-align: center;">
-  <img src="img/img2.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter3/img2.png" alt="sub array" style="width: 50%;">
 </div>
 
 
@@ -87,7 +87,7 @@ Items cannot be split.
 **Recurrence relation**:
 
 <div style="text-align: center;">
-  <img src="img/img4.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter3/img4.png" alt="sub array" style="width: 50%;">
 </div>
 
 Where `w_i` is the weight of item `i`, and `v_i` is its value.  
@@ -126,7 +126,7 @@ Divide the problem into smaller subproblems, solve them recursively, and then co
 **Complexity**: often leads to recurrences like:
 
 <div style="text-align: center;">
-  <img src="img/img5.png" alt="sub array" style="width: 50%;">
+  <img src="img-chapter3/img5.png" alt="sub array" style="width: 50%;">
 </div>
 
 Where the **Master Theorem** can be used to solve them.
