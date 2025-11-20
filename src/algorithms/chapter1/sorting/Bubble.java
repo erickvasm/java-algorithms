@@ -14,7 +14,7 @@ class Bubble {
         println(Arrays.toString(result));
         println(sortedAndRemoveDuplicates(firstArray));
     }
-    
+
     /**
      * A ...
      * @param numbers
