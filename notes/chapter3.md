@@ -8,9 +8,9 @@
 
 **Recurrence relation**:
 
-<div style="text-align: center;">
-  <img src="img-chapter3/img1.png" alt="sub array" style="width: 50%;">
-</div>
+$$
+\text{cut-rod}(p, n) = \max_{1 \le i \le n} (p_i + \text{cut-rod}(p, n-i))
+$$
 
 
 **Key concept**: for each length `i`, all possible cuts are evaluated, and the one that maximizes the sum between the value of the cut and the optimal solution of the remaining piece is selected.  
@@ -25,9 +25,9 @@
 
 **Recurrence relation**:
 
-<div style="text-align: center;">
-  <img src="img-chapter3/img3.png" alt="sub array" style="width: 50%;">
-</div>
+$$
+m[i, j] = \min_{i \le k < j} (m[i, k] + m[k+1, j] + p_{i-1} p_k p_j)
+$$
 
 **Strategy**: try all possible points `k` to split the product and take the minimum combination.  
 **Complexity**: O(n³)
@@ -39,10 +39,14 @@
 **Problem**: Given two strings, find the longest common subsequence (not necessarily contiguous).  
 **Recurrence relation**:
 
-
-<div style="text-align: center;">
-  <img src="img-chapter3/img2.png" alt="sub array" style="width: 50%;">
-</div>
+$$
+c[i, j] = 
+\begin{cases} 
+0 & \text{if } i=0 \text{ or } j=0 \\
+c[i-1, j-1] + 1 & \text{if } x_i = y_j \\
+\max(c[i-1, j], c[i, j-1]) & \text{if } x_i \ne y_j 
+\end{cases}
+$$
 
 
 **Strategy**: build a table that captures the length of the LCS for the first `i` and `j` characters of both strings.  
@@ -86,9 +90,13 @@ Fractions of items can be taken.
 Items cannot be split.  
 **Recurrence relation**:
 
-<div style="text-align: center;">
-  <img src="img-chapter3/img4.png" alt="sub array" style="width: 50%;">
-</div>
+$$
+V[i, w] = 
+\begin{cases} 
+V[i-1, w] & \text{if } w_i > w \\
+\max(V[i-1, w], v_i + V[i-1, w - w_i]) & \text{otherwise}
+\end{cases}
+$$
 
 Where `w_i` is the weight of item `i`, and `v_i` is its value.  
 **Complexity**: O(n × W), where `W` is the total capacity.
@@ -125,9 +133,9 @@ Divide the problem into smaller subproblems, solve them recursively, and then co
 **Advantage**: reduces large problems to smaller, more manageable units.  
 **Complexity**: often leads to recurrences like:
 
-<div style="text-align: center;">
-  <img src="img-chapter3/img5.png" alt="sub array" style="width: 50%;">
-</div>
+$$
+T(n) = aT(n/b) + f(n)
+$$
 
 Where the **Master Theorem** can be used to solve them.
 

@@ -292,9 +292,9 @@ Worst, Average, and Amortized Costs
 Analyzing InsertSort
 🔴 Worst case of InsertSort:The worst case occurs if the array is in reverse order (totally messed up). Every time you insert a new number, you have to compare and move it almost with all the previous ones. Then InsertSort does approximately:
 
-<div style="text-align: center;">
-  <img src="img-chapter2/img7.png" alt="sub array" style="width: 50%;">
-</div>
+$$
+\sum_{i=1}^{n-1} i = 1 + 2 + \dots + (n-1) = \frac{n(n-1)}{2} = O(n^2)
+$$
 
 
 That is O(n²) → Quadratic growth.
@@ -316,9 +316,9 @@ Step by step:1. Find the minimum in the whole array.
 
 SelectionSort cost:Always does the same number of comparisons, no matter if the array is already sorted.
 
-<div style="text-align: center;">
-  <img src="img-chapter2/img7.png" alt="sub array" style="width: 50%;">
-</div>
+$$
+\sum_{i=1}^{n-1} i = 1 + 2 + \dots + (n-1) = \frac{n(n-1)}{2} = O(n^2)
+$$
 
 
 O(n²) in all cases.
@@ -377,13 +377,13 @@ Supongamos que tenemos:
 - En la segunda pasada, n-2 veces.
 - Y así sucesivamente, hasta comparar solo 1 vez en la últim
 
-<div style="text-align: center;">
-  <img src="img-chapter2/img6.png" alt="sub array" style="width: 50%;">
-</div>
+$$
+\sum_{i=1}^{n-1} i = 1 + 2 + \dots + (n-1) = \frac{n(n-1)}{2} = O(n^2)
+$$
 
-<div style="text-align: center;">
-  <img src="img-chapter2/img5.png" alt="sub array" style="width: 50%;">
-</div>
+$$
+\sum_{i=1}^{n-1} i = 1 + 2 + \dots + (n-1) = \frac{n(n-1)}{2} = O(n^2)
+$$
 
 ## Binary InsertSortIt is a variant of the InsertSort algorithm, but optimizes the search for the place to insert the element using binary search instead of a linear search.
 
