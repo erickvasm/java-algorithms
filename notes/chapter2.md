@@ -2,7 +2,7 @@
 
 ## Insertsort 
 
-It simulates how we sort cards in our hand. We assume we have an array a[] of size n. For each element a[i], it is inserted in the correct position within the subarray a[0:i], shifting elements to the right as needed.
+It simulates how we sort cards in our hand.We assume we have an array a[] of size n.For each element a[i], it is inserted in the correct position within the subarray a[0:i], shifting elements to the right as needed.
 
 ### Pseudocode implementation with two loops:
 
@@ -101,7 +101,7 @@ Cada vez que haces swap(x, y), haces 3 asignaciones:
 
 ### Is the algorithm correct?
 
-Stating objectives using **preconditions** and **postconditions** helps validate correctness. The use of **invariants** (statements that always hold true at a certain point in the code) is essential. **Mathematical induction** can be used: prove the base case and the inductive step.
+Stating objectives using **preconditions** and **postconditions** helps validate correctness.The use of **invariants** (statements that always hold true at a certain point in the code) is essential.**Mathematical induction** can be used: prove the base case and the inductive step.
 
 ## Computational Complexity
 
@@ -115,13 +115,13 @@ The following assumptions are made to analyze cost:
 
 ### Notations O, Θ, and Ω- **Big-O (O):
 
-** Upper bound. f(n) ∈ O(g(n)) ⇔ ∃k, N > 0 : ∀n > N, 0 ≤ f(n) ≤ k·g(n) *“f grows at most like g”*
+**Upper bound.f(n) ∈ O(g(n)) ⇔ ∃k, N > 0 : ∀n > N, 0 ≤ f(n) ≤ k·g(n)*“f grows at most like g”*
     - **Insertsort** en el peor caso compara cada número con todos los anteriores → eso son **n² operaciones**.
-- **Theta (Θ):** Tight bound (both upper and lower). f(n) ∈ Θ(g(n)) ⇔ ∃k₁, k₂, N > 0 : ∀n > N, k₁·g(n) ≤ f(n) ≤ k₂·g(n) *“f grows exactly like g”*
+- **Theta (Θ):**Tight bound (both upper and lower).f(n) ∈ Θ(g(n)) ⇔ ∃k₁, k₂, N > 0 : ∀n > N, k₁·g(n) ≤ f(n) ≤ k₂·g(n)*“f grows exactly like g”*
     - Si InsertSort **siempre** necesita aproximadamente n² pasos (ni mucho más ni mucho menos), entonces: → InsertSort es Θ(n²)
-- **Omega (Ω):** Lower bound. *“f grows at least like g”*
+- **Omega (Ω):**Lower bound.*“f grows at least like g”*
     - Si InsertSort recibe un arreglo ya ordenado, solo compara una vez por elemento.
-    - Entonces es **lineal**: → InsertSort es Ω(n)
+    - Entonces es **lineal**:→ InsertSort es Ω(n)
 
 
 | Notation   | What it measures   | How to think about it |
@@ -169,7 +169,7 @@ Formally it should be  ***f(n)***∈***O(g(n)).***
 **Exercise 1**
 Assume that each swap(x, y) means three assignments (namely tmp = x; x = y; y = tmp). Improve the insertsort algorithm pseudocode shown in the hand- out to reduce the number of assignments performed in the inner loop.
 
-**Solución:** La versión clásica de InsertSort realiza muchos intercambios (swaps) mientras el elemento a insertar “baja” en el array. En vez de hacer eso, podemos **mover los elementos hacia la derecha** y luego colocar el valor directamente en su lugar final. Esto evita múltiples swaps innecesarios.
+**Solución:**La versión clásica de InsertSort realiza muchos intercambios (swaps) mientras el elemento a insertar “baja” en el array. En vez de hacer eso, podemos **mover los elementos hacia la derecha** y luego colocar el valor directamente en su lugar final. Esto evita múltiples swaps innecesarios.
 
 **Versión optimizada:**
 
@@ -210,11 +210,11 @@ Write down an incorrect definition for o(n) by taking the definition of O(n) and
 f(n) ∈ o(g(n)) ⇔ ∃ k > 0, N > 0 : ∀ n > N, f(n) < k·g(n)
 Esto es incorrecto porque o(g(n)) significa que **f crece estrictamente más lento que g**, lo cual implica:
 lim (f(n)/g(n)) = 0
-**Ejemplo:** Sea f(n) = 3n² y g(n) = n²
+**Ejemplo:**Sea f(n) = 3n² y g(n) = n²
 Usando la definición incorrecta:
 - Tomemos k = 4, entonces: 3n² < 4n² ⇒ se cumple para todo n > 0
 - Esto diría (erróneamente) que 3n² ∈ o(n²)
-  **Pero esto es falso**, ya que: lim (3n² / n²) = 3 ≠ 0 → por tanto, **no está en o(n²)**
+  **Pero esto es falso**, ya que:lim (3n² / n²) = 3 ≠ 0 → por tanto, **no está en o(n²)**
 
 
 **Exercise 4**
@@ -235,27 +235,27 @@ n100
 For each of the above “=” lines, identify the constants k, k1, k2, N as appropriate.
 For each of the “̸=” lines, show they can’t possibly exist.
 
-**|sin(n)| = O(1)** ✔️ Verdadero.
+**|sin(n)| = O(1)**✔️ Verdadero.
 - |sin(n)| ≤ 1, ∀n
 - k = 1, N = 1
-  **|sin(n)| ≠ Θ(1)** ✔️ Verdadero.
+  **|sin(n)| ≠ Θ(1)**✔️ Verdadero.
 - No hay constantes **k₁, k₂** tal que k₁ ≤ |sin(n)| ≤ k₂ ∀n > N, porque |sin(n)| se acerca arbitrariamente a 0.
-  **200 + sin(n) = Θ(1)** ✔️ Verdadero.
+  **200 + sin(n) = Θ(1)**✔️ Verdadero.
 - Oscila entre 199 y 201 → acotado.
 - k₁ = 199, k₂ = 201, N = 1
-  **123456n + 654321 = Θ(n)** ✔️ Verdadero.
+  **123456n + 654321 = Θ(n)**✔️ Verdadero.
 - Término dominante es lineal.
 - k₁ = 123456, k₂ = 123456 + ε (por ejemplo 130000), N suficientemente grande.
-  **2n−7 = O(17n²)** ✔️ Verdadero.
+  **2n−7 = O(17n²)**✔️ Verdadero.
 - 2n−7 ≤ 2n ≤ 17n² para n suficientemente grande.
 - k = 1, N = 2
-  **lg(n) = O(n)** ✔️ Verdadero.
+  **lg(n) = O(n)**✔️ Verdadero.
 - log(n) crece más lento que n.
-  **lg(n) ≠ Θ(n)** ✔️ Verdadero.
+  **lg(n) ≠ Θ(n)**✔️ Verdadero.
 - No hay k₁, k₂ tales que k₁·n ≤ log(n) ≤ k₂·n. log(n)/n → 0
-  **n¹⁰⁰ = O(2ⁿ)** ✔️ Verdadero.
+  **n¹⁰⁰ = O(2ⁿ)**✔️ Verdadero.
 - Toda función polinomial es O(exponencial).
-  **1 + 100/n = Θ(1)** ✔️ Verdadero.
+  **1 + 100/n = Θ(1)**✔️ Verdadero.
 - tiende a 1 cuando n → ∞, por tanto está acotada.
 
 
@@ -263,7 +263,7 @@ For each of the “̸=” lines, show they can’t possibly exist.
 What is the asymptotic complexity of the variant of insertsort that does fewer
 swaps?
 
-La complejidad asintótica **en tiempo sigue siendo O(n²)** en el peor caso, porque las comparaciones siguen siendo cuadráticas. **Pero la cantidad de asignaciones mejora**:
+La complejidad asintótica **en tiempo sigue siendo O(n²)** en el peor caso, porque las comparaciones siguen siendo cuadráticas.**Pero la cantidad de asignaciones mejora**:
 - Clásico: hasta 3n² asignaciones
 - Optimizado: solo n² comparaciones + n asignaciones finales.
 
@@ -585,9 +585,9 @@ mergeSort(arr, 0, arr.length - 1);
 When looking for the minimum of m items, every time one of the m−1 comparisons fails the best-so-far minimum must be
 updated. Give a permutation of the numbers from 1 to 7 that, if fed to the selectsort algorithm, maximizes the number of times that the above-mentioned comparison fails.
 
-**Respuesta y explicación:** SelectionSort siempre selecciona el mínimo en cada paso. Para que la variable "mínimo" se actualice muchas veces, cada nuevo elemento debe ser menor que todos los anteriores.
+**Respuesta y explicación:**SelectionSort siempre selecciona el mínimo en cada paso. Para que la variable "mínimo" se actualice muchas veces, cada nuevo elemento debe ser menor que todos los anteriores.
 Esto sucede si los elementos están en **orden descendente**, porque en cada iteración se encuentra un nuevo mínimo.
-**Permutación que maximiza fallos de comparación:** [7, 6, 5, 4, 3, 2, 1]
+**Permutación que maximiza fallos de comparación:**[7, 6, 5, 4, 3, 2, 1]
 **Justificación:**
 - En la primera pasada, el mínimo se actualiza 6 veces (comparaciones contra 6, 5, ..., 1).
 - Esta es la mayor cantidad posible de fallos de comparación (actualizaciones de mínimo) para 7 elemento
@@ -628,12 +628,12 @@ La búsqueda de la posición correcta toma O(log n) en vez de O(n). Pero el movi
 **Exercise 9**
 Consider the smallest (“lightest”) and largest (“heaviest”) key in the input. If they both start halfway through the array, will they take the same time to reach their final position or will one be faster? In the latter case, which one, and why?
 
-**Respuesta:** El **más grande** llegará más rápido.
+**Respuesta:**El **más grande** llegará más rápido.
 **Explicación:**
 - En InsertSort, los elementos se mueven **a la izquierda** mientras haya valores mayores.
 - El **más pequeño** deberá moverse hasta el inicio del arreglo, lo que implica muchas comparaciones y desplazamientos.
 - El **más grande** probablemente **ya está casi en su lugar** o **no necesita moverse**, porque no hay elementos mayores a él a su izquierda.
-  **Ejemplo:** Array: [5, 6, 1, 7]
+  **Ejemplo:**Array: [5, 6, 1, 7]
 - 1 (el menor) se moverá varias posiciones a la izquierda.
 - 7 (el mayor) probablemente quedará donde está.
 
@@ -641,7 +641,7 @@ Consider the smallest (“lightest”) and largest (“heaviest”) key in the i
 **Exercise 10**
 Prove that bubblesort will never have to perform more than n passes of the outer loop.
 
-**Respuesta y demostración:** BubbleSort compara elementos adyacentes y los intercambia si están desordenados. Después de cada pasada, **el elemento más grande llega al final** del arreglo.
+**Respuesta y demostración:**BubbleSort compara elementos adyacentes y los intercambia si están desordenados. Después de cada pasada, **el elemento más grande llega al final** del arreglo.
 **Demostración:**
 1. Sea un arreglo de n elementos.
 2. En la **primera pasada**, el mayor se mueve al final.
@@ -778,7 +778,7 @@ heap of height h?
     - Elements **less than the pivot**
     - Elements **greater than the pivot**
 1. Apply QuickSort **recursively** to each part.
-1. Combine everything: [smaller elements] + [pivot] + [larger elements]
+1. Combine everything:[smaller elements] + [pivot] + [larger elements]
 
 **Time complexity**
 
@@ -795,7 +795,7 @@ QuickSort is very fast in practice, but it is **not stable** (it does not preser
 Example: [5, 2, 9, 1, 6], pivot = 5
 - Smaller: [2, 1]
 - Greater: [9, 6]
-  Recursively sort [2, 1] → [1, 2] And [9, 6] → [6, 9]
+  Recursively sort [2, 1] → [1, 2]And [9, 6] → [6, 9]
   Result: [1, 2] + [5] + [6, 9] = [1, 2, 5, 6, 9]
 
 **Why is it fast?**
@@ -838,7 +838,7 @@ What does "linear" mean?
 - Counts how many times each number appears
 - Uses an auxiliary count array
 - Reconstructs the sorted array from the counts
-  Efficient if the numbers are in a small range (e.g., 0 to 100) Not suitable for large or non-integer ranges
+  Efficient if the numbers are in a small range (e.g., 0 to 100)Not suitable for large or non-integer ranges
 
 **Exercise 22**
 Give detailed pseudocode for the counting sort algorithm (par-
@@ -849,7 +849,7 @@ auxiliary values?
 **2. Radix Sort**
 - Sorts numbers **digit by digit**, starting from the least significant digit
 - Internally uses **Counting Sort** on each digit
-  Good for large numbers (e.g., IDs, phone numbers) Not suitable for data that can't be broken into digits
+  Good for large numbers (e.g., IDs, phone numbers)Not suitable for data that can't be broken into digits
 
 **Exercise 23**
 Why couldn’t we simply use counting sort in the first place, since
@@ -859,7 +859,7 @@ the keys are integers in a known range?
 - Divides the input into **buckets** (groups of similar values)
 - Sorts each bucket (e.g., using Insertion Sort)
 - Concatenates all buckets into the final sorted array
-  Works well for **uniformly distributed data** May perform poorly with highly skewed data
+  Works well for **uniformly distributed data**May perform poorly with highly skewed data
 
 
 | Topic            | Description                       | Advantages                     | Limitations                                    |
