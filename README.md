@@ -16,14 +16,6 @@ Taught by [Professor Frank Stajano](http://frankstajanoexplains.com)
 - [Lecture Recordings](http://frankstajanoexplains.com)
 - [Course Website](https://www.cl.cam.ac.uk/teaching/2021/Algorithms/)
 
-### Supplementary Sources
-
-**CC3001 Course Notes** (Java version)  
-By Patricio Poblete and Benjamín Bustos  
-Universidad de Chile, Department of Computer Science
-
-- 🔗 [Course Materials](http://www.dcc.uchile.cl/cc3001/) (general reference)
-
 ---
 
 ## Content Overview

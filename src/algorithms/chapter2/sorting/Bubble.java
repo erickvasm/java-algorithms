@@ -1,4 +1,4 @@
-package algorithms.chapter1.sorting;
+package algorithms.chapter2.sorting;
 
 import java.util.ArrayList;
 import java.util.Arrays;

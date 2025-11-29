@@ -20,22 +20,27 @@ A subsequence means you can remove letters (but not change their order).
 **Example**:
 
 - If `S = AGTGTACCCAT`:
-  - `AGTAAT` is a valid subsequence (some letters skipped).
-  - `AAG` or `TCG` are not (they change the order or insert letters).
+    - `AGTAAT` is a valid subsequence (some letters skipped).
+    - `AAG` or `TCG` are not (they change the order or insert letters).
 
 > The goal of the algorithm is to find the longest such subsequence between two strings.
 
 ---
 
-### Initial challenge: How long would it take to compare all possible subsequences?
+### Exercise 0
 
-#### Total Number of Possible Subsequences (Exercise 0)
+> If you were to compare every possible subsequence of the first
+> string to every possible subsequence of the second string, how
+> many comparisons would you need to perform, if the lengths of
+> the two strings were respectively m and n?
 
 For a string of length $n$, the total number of subsequences (including the empty string) is:
 
 $$
 2^n
 $$
+
+Because, all the subsequences has 2 possibilities, they can be added or not.
 
 So:
 
@@ -57,25 +62,8 @@ $$
 2^3 = 8
 $$
 
----
-
-### Runtime (Brute Force)
-
-An algorithm that compares all possible combinations would take **exponential time**:
-
-$$
-O(2^{n + m})
-$$
-
-This is inefficient and unfeasible, even for relatively small values like $n = 30$.
-
-**Example**:
-
-- If $n = 10$ and $m = 10$:
-
-$$
-2^{10 + 10} = 2^{20} \approx 1,\!000,\!000 \text{ comparisons}
-$$
+But this method is very inefficient. For example: $2^{40}=10^{12}$, which is more than a billion
+comparisons. Is exponential $O(2^{n + m})$
 
 ---
 
@@ -113,7 +101,8 @@ It contains **millions of records** and many **indexes**:
 - By name, date, amount, and so on.
 
 Since everything doesn’t fit in **RAM**, indexes are stored on **disk**.  
-Reading from disk is slow, so we need **data structures** (like **trees** or **B-trees**) that allow **fast searches** without reading the whole file.
+Reading from disk is slow, so we need **data structures** (like **trees** or **B-trees**)
+that allow **fast searches** without reading the whole file.
 
 ---
 
@@ -122,21 +111,22 @@ Reading from disk is slow, so we need **data structures** (like **trees** or **B
 The instructor suggests thinking like a scientist and asking key questions:
 
 1. **What is the algorithm?**
-   - What steps solve the problem?
-   - What data structures are needed?
+    - What steps solve the problem?
+    - What data structures are needed?
 
 2. **Is it correct?**
-   - Does it always return the correct answer?
-   - Can I prove it mathematically?
+    - Does it always return the correct answer?
+    - Can I prove it mathematically?
 
 3. **How fast is it?**
-   - How long does it take for 10, 1,000, or a million data points?
-   - How does the computer type affect it?
+    - How long does it take for 10, 1,000, or a million data points?
+    - How does the computer type affect it?
 
 4. **Which algorithm is better?**
-   - Sometimes, there’s more than one way to solve a problem.
-   - We must compare speed, memory usage, and scalability.
+    - Sometimes, there’s more than one way to solve a problem.
+    - We must compare speed, memory usage, and scalability.
 
 ---
 
-> The goal of this course is to learn how to answer these questions for **any algorithm**, not just memorize solutions.
+> The goal of this course is to learn how to answer these questions
+> for **any algorithm**, not just memorize solutions.
